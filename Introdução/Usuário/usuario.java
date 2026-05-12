@@ -1,4 +1,4 @@
-package Usuário;
+package Introdução.Usuário;
 
 public class usuario {
     String nome;
