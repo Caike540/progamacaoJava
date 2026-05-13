@@ -12,6 +12,6 @@ public class Produto {
     }
 
     public void exibirInformacoes() {
-        System.out.println("Nome: " + nome + " - Preço: " + preco + " - Quantidade em estoque: " + qtdEmEstoque);
+        System.out.println("Nome: " + nome + " - Preço: " + preco + " - Quantidade em estoque: " + qtdEmEstoque + "\n");
     }
 }
