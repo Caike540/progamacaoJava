@@ -10,4 +10,8 @@ public class Produto {
         this.preco = preco;
         this.qtdEmEstoque = qtdEmEstoque;
     }
+
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + nome + " - Preço: " + preco + " - Quantidade em estoque: " + qtdEmEstoque);
+    }
 }
