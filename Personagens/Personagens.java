@@ -1,4 +1,4 @@
-package Introducao.Personagens;
+package Personagens;
 
 // Criando a classe "Personagens"
 

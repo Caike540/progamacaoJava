@@ -1,4 +1,4 @@
-package Introducao.Personagens;
+package Personagens;
 
 public class Main {
     public static void main(String[] args) {
