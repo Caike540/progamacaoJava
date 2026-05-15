@@ -40,7 +40,7 @@ public class ServidorMultitarefa {
 
         // Alterna entre processador rápido e lento
         if (i % 2 == 0) {
-            // Processador rápidocom prioridade máxima
+            // Processador rápido com prioridade máxima
             thread = new Thread(new ProcessadorRapido(tarefa), "Thread-Rápida-" + (i + 1));
             thread.setPriority(Thread.MAX_PRIORITY);
         } else {
