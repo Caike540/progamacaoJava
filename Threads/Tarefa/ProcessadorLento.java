@@ -9,14 +9,15 @@ public class ProcessadorLento implements Runnable {
         this.tarefa = tarefa;
     }
     
+    // Trata exceções que podem ocorrer durante a execução da tarefa
     @Override
     public void run() {
         try {
             System.out.println("[PROCESSADOR LENTO] Iniciando processamento da tarefa " + tarefa.getId());
-        tarefa.executar();
-        System.out.println("[PROCESSADOR LENTO] Tarefa " + tarefa.getId() + " finalizada.");
+            tarefa.executar();
+            System.out.println("[PROCESSADOR LENTO] Processamento da tarefa " + tarefa.getId() + " finalizado");
         } catch (TarefaInvalidaException e) {
-            System.out.println("[PROCESSADOR LENTO] Erro: " + e.getMessage());
+            System.err.println("[PROCESSADOR LENTO] Erro: " + e.getMessage());
         }
     }
 }

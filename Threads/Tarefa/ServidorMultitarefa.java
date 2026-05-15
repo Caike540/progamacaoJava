@@ -5,14 +5,19 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+    Classe principal: Simulador de Servidor Multitarefa
+    Demonstração de threads, prioridades, tipos (user e daemon) e tratamento de exceções personalizadas.
+ */
+
 public class ServidorMultitarefa {
 
     public static void main(String[] args) {
     System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
     System.setErr(new PrintStream(System.err, true, StandardCharsets.UTF_8));
 
-    System.out.println("=== SIMULADOR DE SERVIDOR MULTITAREFA ===");
-    System.out.println("Demonstrando threads, prioridades e exceções personalizadas.");
+    System.out.println("\n=== SIMULADOR DE SERVIDOR MULTITAREFA ===");
+    System.out.println("Demonstrando threads, prioridades e exceções personalizadas.\n");
 
     // Criando uma lista de tarefas
     List<Tarefa> tarefas = new ArrayList<>();
@@ -29,9 +34,9 @@ public class ServidorMultitarefa {
 
         // Criando threads com diferentes processadores e prioridades
         for (int i = 0; i < tarefas.size(); i++) {
-            Tarefa tarefa = tarefa.get(i);
+            Tarefa tarefa = tarefas.get(i);
             Thread thread;
-        }
+        
 
         // Alterna entre processador rápido e lento
         if (i % 2 == 0) {
@@ -46,11 +51,11 @@ public class ServidorMultitarefa {
 
         // Configura algumas threads como daemon (tarefas de apoio)
         if (i >= 4) {
-            thread.setDeamon(true);
+            thread.setDaemon(true);
             System.out.println("Thread " + thread.getName() + " configurada como DAEMON");
         }
 
-        threads.add(threads);
+        threads.add(thread);
     }
 
     // Exibindo as informações das threads antes da execução
@@ -70,13 +75,13 @@ public class ServidorMultitarefa {
     }
 
     // Aguardando a conclusão das threads não-daemon
-    System.out.println("\n===AGUARDANDO CONCLUSÃO DAS THREADS ===");
+    System.out.println("\n=== AGUARDANDO CONCLUSÃO DAS THREADS ===");
     for (Thread thread : threads) {
         if (!thread.isDaemon()) {
             try {
                 thread.join();
                 System.out.println("Thread " + thread.getName() + " finalizada - Estado: " + thread.getState());
-            } catch (InterruptedException) {
+            } catch (InterruptedException e) {
                 System.err.println("Interrupção ao aguardar a thread: " + e.getMessage());
             }
         }
@@ -91,4 +96,5 @@ public class ServidorMultitarefa {
     }
 
     System.out.println("\n=== SERVIDOR MULTITAREFA FINALIZADO ===");
+    }
 }
