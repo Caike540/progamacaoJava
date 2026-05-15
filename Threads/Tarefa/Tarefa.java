@@ -12,14 +12,14 @@ public class Tarefa {
     public void executar() throws TarefaInvalidaException {
         // Válida se a descrição é válida
         if (descricao == null || descricao.trim().isEmpty()) {
-            throw new TarefaInvalidaException("Tarefa com ID " + id + " e descrição [[" + descricao + "]] inválida.");
+            throw new TarefaInvalidaException("Tarefa com ID " + id + ", descrição " + "[[ " + descricao + " ]] " + " inválida!");
         }
 
         // Imprime a descrição da tarefa
         System.out.println("[" + Thread.currentThread().getName() + "] Executando tarefa " + id + ": " + descricao);
    
         try {
-            // Simula o tempo de execução da tarefa
+            // Simula processamento da tarefa (1 segundo)
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             System.out.println("[" + Thread.currentThread().getName() + "] Tarefa " + id + " foi interrompida.");
